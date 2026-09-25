@@ -1,0 +1,14 @@
+class Solution:
+    def countBits(self, n: int) -> List[int]:
+        def count(n):
+            count = 0
+            while n > 0:
+                if n & 1 == 1:
+                    count += 1
+                n = n>>1
+            return count
+
+        l = []
+        for i in range(0,n+1):
+            l.append((count(i)))
+        return l
